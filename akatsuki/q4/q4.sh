@@ -1,6 +1,6 @@
 #!/bin/bash
 
-readarray -d ' ' -t array < q4_in.txt
+readarray -d ' ' -t array < $1
 readarray -td '' sorted < <(printf '%s\0' "${array[@]}" | sort -z) 
 
 for i in "${sorted[@]}"
